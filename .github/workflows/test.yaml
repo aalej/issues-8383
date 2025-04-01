@@ -24,4 +24,4 @@ jobs:
         run: npm i
 
       - name: Run tests
-        run: firebase emulators:exec --only "firestore,storage" "npm run test -- --runInBand --updateSnapshot --detectOpenHandles --forceExit --coverage" --project demo-project
+        run: firebase emulators:exec --only "firestore,auth,storage" "npm run test -- --runInBand --updateSnapshot --detectOpenHandles --forceExit --coverage" --project demo-project
