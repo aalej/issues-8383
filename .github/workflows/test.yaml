@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.15"
+
+      - name: Install dependencies
+        run: |
+          npm install -g firebase-tools
+          yarn
+
+      - name: Lint
+        run: yarn eslint .
+
+      - name: Check TypeScript errors
+        run: yarn tsc --noEmit
+
+      - name: Run tests
+        run: firebase emulators:exec --only "firestore" "npm run test -- --runInBand --updateSnapshot --detectOpenHandles --forceExit --coverage" --project demo-project
