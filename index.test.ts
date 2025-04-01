@@ -15,6 +15,11 @@ for (let i = 0; i < 1000; i++) {
           host: "localhost",
           port: 8080,
         },
+        storage: {
+          rules: fs.readFileSync("storage.rules", "utf8"),
+          host: "localhost",
+          port: 9199,
+        },
         hub: {
           host: "localhost",
           port: 4400,
