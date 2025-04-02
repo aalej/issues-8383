@@ -24,4 +24,5 @@ jobs:
         run: npm i
 
       - name: Run tests
-        run: firebase emulators:exec --only "firestore,auth,storage" "npm run test" --project demo-project
+        # run: firebase emulators:exec --only "firestore,auth,storage" "npm run test" --project demo-project
+        run: bash runner.sh
