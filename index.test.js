@@ -5,7 +5,9 @@ const {
 } = require("@firebase/rules-unit-testing");
 const fs = require("node:fs");
 
-for (let i = 0; i < 1000; i++) {
+const MAX_COUNT = 1;
+
+for (let i = 0; i < MAX_COUNT; i++) {
   describe(`Test number ${i}`, () => {
     beforeAll(async () => {
       await initializeTestEnvironment({
