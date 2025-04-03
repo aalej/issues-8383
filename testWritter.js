@@ -56,7 +56,7 @@ for (let i = 0; i < {{MAX_COUNT}}; i++) {
 }
 `
 
-const TEST_SCRIPT_MAX = 50; // Number of test script to be created
+const TEST_SCRIPT_MAX = 30; // Number of test script to be created
 const TEST_RUNS_MAX = 100; // Times the test will be run
 
 
